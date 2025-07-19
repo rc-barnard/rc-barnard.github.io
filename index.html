@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ruan's Portfolio</title>
+  <style>
+    /* Reset & base */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      background-color: #000;
+      color: #eee;
+      font-family: 'Courier New', Courier, monospace;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* Sticky Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: #111;
+      border-bottom: 2px solid #00ff99;
+      display: flex;
+      justify-content: center;
+      z-index: 10;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      padding: 1rem;
+    }
+    nav ul li a {
+      color: #eee;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      letter-spacing: 0.1rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    nav ul li a:hover,
+    nav ul li a:focus {
+      background-color: #00ff99;
+      color: #000;
+      outline: none;
+    }
+
+    /* Hero Section with profile + typing */
+    .hero {
+      height: 35vh;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background: linear-gradient(90deg, #000, #004d33);
+      border-bottom: 2px solid #00ff99;
+      padding: 2rem 1rem;
+      gap: 3rem;
+      max-width: 900px;
+      margin: 0 auto;
+      color: #00ff99;
+      font-weight: bold;
+    }
+    /* Profile picture container */
+    .profile-pic {
+      flex: 0 0 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 4px solid #00ff99;
+      overflow: hidden;
+      box-shadow: 0 0 10px #00ff99;
+      transition: transform 0.3s ease;
+    }
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .profile-pic:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00ff99;
+    }
+
+    /* Typing container */
+    .typing-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      font-size: 1.6rem;
+      font-family: 'Courier New', Courier, monospace;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+	.typing {
+	  display: inline-block;
+	  overflow: hidden;
+	  white-space: nowrap;
+	  width: 0ch;
+	  animation: typing 3s steps(40, end) forwards;
+	}
+
+
+    .typing:nth-of-type(2) {
+      animation-delay: 4s;
+    }
+
+    .typing:nth-of-type(3) {
+      animation-delay: 8s;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0ch;
+      }
+      to {
+        width: 40ch;
+      }
+    }
+
+    /* Sections base */
+    section {
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      border-bottom: 1px solid #00ff99;
+    }
+    section:last-of-type {
+      border-bottom: none;
+    }
+    h2 {
+      color: #00ff99;
+      margin-bottom: 1rem;
+      letter-spacing: 0.1rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      border-left: 6px solid #00ff99;
+      padding-left: 0.8rem;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #ccc;
+    }
+    ul.skills-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      color: #00ff99;
+    }
+    ul.skills-list li {
+      background: #003322;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 1rem;
+      box-shadow: 0 0 5px #00ff99;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 3rem;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      .hero {
+        flex-direction: column;
+        height: auto;
+      }
+      .profile-pic {
+        margin-bottom: 1rem;
+      }
+      .typing-wrapper {
+        white-space: normal;
+        font-size: 1.2rem;
+        text-align: center;
+      }
+      .typing {
+        border-right: none;
+        width: auto !important;
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="#home" tabindex="1">Home</a></li>
+      <li><a href="#about" tabindex="2">About</a></li>
+      <li><a href="#projects" tabindex="3">Projects</a></li>
+      <li><a href="#skills" tabindex="4">Skills</a></li>
+      <li><a href="#contact" tabindex="5">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="home" class="hero">
+    <div class="profile-pic">
+      <img src="rcbarnard.jpg" alt="Profile Pic"/>
+    </div>
+    <div class="typing-wrapper">
+      <div class="typing">IT AUDIT & SYSTEMS ANALYSIS ENTHUSIAST</div>
+      <div class="typing">SOFTWARE ENGINEER IN TRAINING</div>
+      <div class="typing">BUSINESS-MINDED DEVELOPER</div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Ruan Barnard
+  </footer>
+
+</body>
+</html>
