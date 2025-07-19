@@ -1,15 +1,19 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ruan's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Fira+Code&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+    html {
+      font-size: clamp(14px, 2vw, 18px);
     }
     body {
       background-color: #000;
@@ -17,6 +21,31 @@
       font-family: 'Courier New', Courier, monospace;
       line-height: 1.6;
       scroll-behavior: smooth;
+    }
+
+    .page-border {
+      min-height: 100vh;
+      border: 6px solid #00ff99;
+      border-radius: 12px;
+      padding: 1rem;
+      margin: 1rem;
+      box-shadow:
+        0 0 20px #00ff99,
+        0 0 60px #00ff99 inset,
+        0 0 30px #00ff99;
+      animation: glowPulse 3s ease-in-out infinite;
+    }
+
+    @keyframes glowPulse {
+      0% {
+        box-shadow: 0 0 20px #00ff99, 0 0 60px #00ff99 inset, 0 0 30px #00ff99;
+      }
+      50% {
+        box-shadow: 0 0 40px #00ff99, 0 0 80px #00ff99 inset, 0 0 60px #00ff99;
+      }
+      100% {
+        box-shadow: 0 0 20px #00ff99, 0 0 60px #00ff99 inset, 0 0 30px #00ff99;
+      }
     }
 
     nav {
@@ -60,7 +89,7 @@
       align-items: center;
       background: linear-gradient(90deg, #000, #004d33);
       border-bottom: 2px solid #00ff99;
-      padding: 2rem 1rem;
+      padding: 3rem 1rem;
       gap: 2rem;
       max-width: 900px;
       margin: 0 auto;
@@ -88,53 +117,38 @@
       box-shadow: 0 0 20px #00ff99;
     }
 
-    .typing-wrapper {
+    .profile-info {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      gap: 1rem;
-      font-size: 1.6rem;
-      font-family: 'Courier New', Courier, monospace;
-      white-space: normal;
-      overflow: visible;
-	  word-break: break-word;
+      align-items: center;
       text-align: center;
+      color: #eee;
+    }
+    .profile-info .name {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-top: 1rem;
+      color: #00ff99;
+    }
+    .profile-info .degree {
+      font-size: 1.1rem;
+      color: #ccc;
+      margin-top: 0.2rem;
     }
 
-    .typing {
-      display: inline-block;
-      overflow: hidden;
-      white-space: nowrap;
-      width: 0ch;
-      animation: typing 3s steps(40, end) forwards;
-    }
-
-    .typing:nth-of-type(2) {
-      animation-delay: 4s;
-    }
-
-    .typing:nth-of-type(3) {
-      animation-delay: 8s;
-    }
-
-    @keyframes typing {
-      from {
-        width: 0ch;
-      }
-      to {
-        width: 40ch;
-      }
+    .typing-wrapper {
+      font-family: 'Fira Code', monospace;
+      font-size: 1.5rem;
+      text-align: center;
     }
 
     section {
       padding: 3rem 2rem;
       max-width: 1000px;
       margin: 0 auto;
-	  margin-left: calc(50% - 500px);
-      border-bottom: 1px solid #00ff99;
     }
-    section:last-of-type {
-      border-bottom: none;
+    section:nth-of-type(even) {
+      background-color: #0a0a0a;
     }
     h2 {
       color: #00ff99;
@@ -150,6 +164,13 @@
       margin-bottom: 1rem;
       color: #ccc;
     }
+    .content-box {
+      background-color: #111;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #00ff99;
+    }
+
     ul.skills-list {
       list-style: none;
       display: flex;
@@ -164,6 +185,29 @@
       font-weight: bold;
       font-size: 1rem;
       box-shadow: 0 0 5px #00ff99;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    ul.skills-list li:hover {
+      transform: scale(1.05);
+      background: #00ff99;
+      color: #000;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      background-color: #111;
+      border: 1px solid #00ff99;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 5px #00ff99;
+    }
+    .project-card a {
+      color: #00ff99;
+      text-decoration: underline;
     }
 
     footer {
@@ -173,77 +217,98 @@
       color: #555;
       margin-top: 3rem;
     }
-
-    @media (max-width: 600px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-      .profile-pic {
-        margin-bottom: 1rem;
-      }
-      .typing-wrapper {
-        font-size: 1.2rem;
-      }
-      .typing {
-        animation: none !important;
-        width: auto !important;
-		display: block;
-		white-space: normal;
-      }
-	  section {
-		  margin-left: auto;
-		  margin-right: auto;
-		  padding: 2rem 1rem;
-		}
-
-    }
-	
-	.align-right {
-	  text-align: right;
-	  border-left: none;
-	  border-right: 6px solid #00ff99;
-	  padding-right: 0.8rem;
-	  padding-left: 0;
-	}
-
   </style>
 </head>
 <body>
+  <div class="page-border">
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav><br>
 
-  <nav>
-    <ul>
-      <li><a href="#home" tabindex="1">Home</a></li>
-      <li><a href="#about" tabindex="2">About</a></li>
-      <li><a href="#projects" tabindex="3">Projects</a></li>
-      <li><a href="#skills" tabindex="4">Skills</a></li>
-      <li><a href="#contact" tabindex="5">Contact</a></li>
-    </ul>
-  </nav><br>
-  <section id="home" class="hero">
-    <div class="profile-pic">
-      <img src="rcbarnard.jpg" alt="Profile Pic" />
-    </div>
-    <div class="typing-wrapper">
-      <div class="typing">IT AUDIT & SYSTEMS ANALYSIS ENTHUSIAST</div>
-      <div class="typing">SOFTWARE ENGINEER IN TRAINING</div>
-      <div class="typing">BUSINESS-MINDED DEVELOPER</div>
-    </div>
-  </section>
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      My problem-solving skills are honed to deliver optimal solutions, and I am committed to achieving success for both myself and my work. As a fast
-	  learner with a strong desire to excel, I consistently strive to reach the highest standards in all endeavors.
-    </p>
-  </section>
-  <section id="projects">
-	<h2 class="align-right">My Projects</h2>
-  </section>
+    <section id="home" class="hero">
+      <div class="profile-info">
+        <div class="profile-pic">
+          <img src="rcbarnard.jpg" alt="Profile Pic" />
+        </div>
+        <p class="name">Ruan Barnard</p>
+        <p class="degree">B.Sc. in Information Technology</p>
+      </div>
 
-  <footer>
-    &copy; 2025 Ruan Barnard
-  </footer>
+      <div class="typing-wrapper">
+        <p>IT AUDIT & SYSTEMS ANALYSIS ENTHUSIAST</p>
+        <p>SOFTWARE ENGINEER IN TRAINING</p>
+        <p>BUSINESS-MINDED DEVELOPER</p>
+      </div>
+    </section><br>
 
+    <section id="about" data-aos="fade-up">
+      <h2>About Me</h2>
+      <div class="content-box">
+        <p>
+          My problem-solving skills are honed to deliver optimal solutions, and I am committed to achieving success for both myself and my work. As a fast
+          learner with a strong desire to excel, I consistently strive to reach the highest standards in all endeavors.
+        </p>
+      </div>
+    </section>
+
+    <section id="projects" data-aos="fade-up">
+      <h2>My Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Professional Banking Services</h3>
+          <p>A simple yet effective banking management system with secure user logins and role-based access control.</p>
+          <a href="#">View on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" data-aos="fade-up">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>Object-Oriented Programming (OOP)</li>
+        <li>ASP.NET</li>
+        <li>Oracle Databases</li>
+        <li>Relational Databases</li>
+        <li>SDLC</li>
+        <li>DBLC</li>
+        <li>Python</li>
+        <li>Java</li>
+        <li>C++</li>
+        <li>C#</li>
+        <li>GitHub</li>
+        <li>Problem Solving Management</li>
+        <li>Visual Studio</li>
+        <li>Critical Thinking</li>
+        <li>Project Management</li>
+        <li>Strategic Planning</li>
+        <li>Teamwork</li>
+        <li>Security</li>
+      </ul>
+    </section>
+
+    <section id="contact" data-aos="fade-up">
+      <div align="center">
+        <a href="mailto:ruanbarnard044@outlook.com"><img src="outlook.png" width="10%"></a>
+        <a href="https://www.linkedin.com/in/ruan-barnard-69ab59307"><img src="linkedIn.png" width="10%"></a>
+        <a href="https://github.com/rc-barnard"><img src="github.png" width="10%"></a>
+        <p>Email: <a href="mailto:ruanbarnard044@outlook.com" style="color:#00ff99;">ruanbarnard044@outlook.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/ruan-barnard/" style="color:#00ff99;">Ruan Barnard</a></p>
+        <p>GitHub: <a href="https://github.com/rc-barnard" style="color:#00ff99;">RC Barnard</a></p>
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2025 Ruan Barnard, North-West University
+    </footer>
+  </div>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>AOS.init();</script>
 </body>
 </html>
