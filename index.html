@@ -5,63 +5,156 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ruan's Portfolio</title>
   <style>
-  .typing-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    font-size: 1.6rem;
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .typing {
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 2px solid #00ff99;
-    width: 0ch;
-  }
-
-  .typing:nth-of-type(1) {
-    animation: typing 3s steps(36, end) forwards;
-  }
-
-  .typing:nth-of-type(2) {
-    animation: typing 3s steps(32, end) forwards 3.2s;
-  }
-
-  .typing:nth-of-type(3) {
-    animation: typing 3s steps(30, end) forwards 6.4s;
-  }
-
-  @keyframes typing {
-    from {
-      width: 0ch;
+    /* RESET & BASE */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    to {
-      width: 40ch;
+    body {
+      background-color: #000;
+      color: #eee;
+      font-family: 'Courier New', Courier, monospace;
+      line-height: 1.6;
     }
-  }
 
-  /* Mobile fallback */
-  @media (max-width: 600px) {
+    /* NAVIGATION */
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: #111;
+      border-bottom: 2px solid #00ff99;
+      display: flex;
+      justify-content: center;
+      z-index: 10;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      padding: 1rem;
+    }
+    nav ul li a {
+      color: #eee;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      letter-spacing: 0.1rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    nav ul li a:hover {
+      background-color: #00ff99;
+      color: #000;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      height: auto;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background: linear-gradient(90deg, #000, #004d33);
+      border-bottom: 2px solid #00ff99;
+      padding: 2rem 1rem;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      color: #00ff99;
+      font-weight: bold;
+      flex-wrap: wrap;
+    }
+
+    /* PROFILE PIC */
+    .profile-pic {
+      flex: 0 0 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 4px solid #00ff99;
+      overflow: hidden;
+      box-shadow: 0 0 10px #00ff99;
+      transition: transform 0.3s ease;
+    }
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .profile-pic:hover {
+      transform: scale(1.05);
+    }
+
+    /* TYPING TEXT */
     .typing-wrapper {
-      font-size: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      font-size: 1.6rem;
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+      width: 100%;
+      overflow: hidden;
     }
 
     .typing {
-      animation: none;
-      border-right: none;
-      width: auto;
-      white-space: normal;
-      overflow: visible;
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid #00ff99;
+      width: 0ch;
     }
-  }
-</style>
 
+    .typing:nth-of-type(1) {
+      animation: typing 3s steps(36, end) forwards;
+    }
+
+    .typing:nth-of-type(2) {
+      animation: typing 3s steps(32, end) forwards 3.2s;
+    }
+
+    .typing:nth-of-type(3) {
+      animation: typing 3s steps(30, end) forwards 6.4s;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0ch;
+      }
+      to {
+        width: 40ch;
+      }
+    }
+
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 600px) {
+      .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .typing-wrapper {
+        font-size: 1.2rem;
+      }
+      .typing {
+        animation: none;
+        border-right: none;
+        width: auto;
+        white-space: normal;
+        overflow: visible;
+      }
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 3rem;
+    }
+  </style>
 </head>
 <body>
 
