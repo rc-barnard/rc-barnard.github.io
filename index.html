@@ -128,8 +128,9 @@
 
     section {
       padding: 3rem 2rem;
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
+	  margin-left: calc(50% - 500px);
       border-bottom: 1px solid #00ff99;
     }
     section:last-of-type {
@@ -191,6 +192,15 @@
 		white-space: normal;
       }
     }
+	
+	.align-right {
+	  text-align: right;
+	  border-left: none;
+	  border-right: 6px solid #00ff99;
+	  padding-right: 0.8rem;
+	  padding-left: 0;
+	}
+
   </style>
 </head>
 <body>
@@ -203,8 +213,7 @@
       <li><a href="#skills" tabindex="4">Skills</a></li>
       <li><a href="#contact" tabindex="5">Contact</a></li>
     </ul>
-  </nav>
-
+  </nav><br>
   <section id="home" class="hero">
     <div class="profile-pic">
       <img src="rcbarnard.jpg" alt="Profile Pic" />
@@ -214,6 +223,16 @@
       <div class="typing">SOFTWARE ENGINEER IN TRAINING</div>
       <div class="typing">BUSINESS-MINDED DEVELOPER</div>
     </div>
+  </section>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      My problem-solving skills are honed to deliver optimal solutions, and I am committed to achieving success for both myself and my work. As a fast
+	  learner with a strong desire to excel, I consistently strive to reach the highest standards in all endeavors.
+    </p>
+  </section>
+  <section id="projects">
+	<h2 class="align-right">My Projects</h2>
   </section>
 
   <footer>
