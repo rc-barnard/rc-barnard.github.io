@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ruan's Portfolio</title>
   <style>
-    /* Reset & base */
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
     body {
       background-color: #000;
@@ -17,7 +18,6 @@
       scroll-behavior: smooth;
     }
 
-    /* Sticky Navigation */
     nav {
       position: sticky;
       top: 0;
@@ -30,8 +30,10 @@
     nav ul {
       list-style: none;
       display: flex;
+      flex-wrap: wrap;
       gap: 2rem;
       padding: 1rem;
+      justify-content: center;
     }
     nav ul li a {
       color: #eee;
@@ -50,24 +52,23 @@
       outline: none;
     }
 
-    /* Hero Section with profile + typing */
     .hero {
-      height: 35vh;
       display: flex;
-      justify-content: flex-start;
+      flex-wrap: wrap;
+      justify-content: center;
       align-items: center;
       background: linear-gradient(90deg, #000, #004d33);
       border-bottom: 2px solid #00ff99;
       padding: 2rem 1rem;
-      gap: 3rem;
+      gap: 2rem;
       max-width: 900px;
       margin: 0 auto;
       color: #00ff99;
       font-weight: bold;
     }
-    /* Profile picture container */
+
     .profile-pic {
-      flex: 0 0 160px;
+      width: 160px;
       height: 160px;
       border-radius: 50%;
       border: 4px solid #00ff99;
@@ -86,7 +87,6 @@
       box-shadow: 0 0 20px #00ff99;
     }
 
-    /* Typing container */
     .typing-wrapper {
       display: flex;
       flex-direction: column;
@@ -96,16 +96,16 @@
       font-family: 'Courier New', Courier, monospace;
       white-space: nowrap;
       overflow: hidden;
+      text-align: center;
     }
 
-	.typing {
-	  display: inline-block;
-	  overflow: hidden;
-	  white-space: nowrap;
-	  width: 0ch;
-	  animation: typing 3s steps(40, end) forwards;
-	}
-
+    .typing {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 0ch;
+      animation: typing 3s steps(40, end) forwards;
+    }
 
     .typing:nth-of-type(2) {
       animation-delay: 4s;
@@ -124,7 +124,6 @@
       }
     }
 
-    /* Sections base */
     section {
       padding: 3rem 2rem;
       max-width: 900px;
@@ -164,7 +163,6 @@
       box-shadow: 0 0 5px #00ff99;
     }
 
-    /* Footer */
     footer {
       text-align: center;
       padding: 1rem;
@@ -173,11 +171,10 @@
       margin-top: 3rem;
     }
 
-    /* Responsive tweaks */
     @media (max-width: 600px) {
       .hero {
         flex-direction: column;
-        height: auto;
+        text-align: center;
       }
       .profile-pic {
         margin-bottom: 1rem;
@@ -185,12 +182,10 @@
       .typing-wrapper {
         white-space: normal;
         font-size: 1.2rem;
-        text-align: center;
       }
       .typing {
-        border-right: none;
-        width: auto !important;
         animation: none !important;
+        width: auto !important;
       }
     }
   </style>
@@ -209,7 +204,7 @@
 
   <section id="home" class="hero">
     <div class="profile-pic">
-      <img src="rcbarnard.jpg" alt="Profile Pic"/>
+      <img src="rcbarnard.jpg" alt="Profile Pic" />
     </div>
     <div class="typing-wrapper">
       <div class="typing">IT AUDIT & SYSTEMS ANALYSIS ENTHUSIAST</div>
