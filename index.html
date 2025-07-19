@@ -6,6 +6,13 @@
   <title>ruan@portfolio:~$</title>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
   <style>
+    /* Core styling */
+    * ,
+    *::before,
+    *::after {
+      box-sizing: border-box; /* Prevent padding/border from messing width */
+    }
+
     body {
       margin: 0;
       background-color: #000;
@@ -87,6 +94,7 @@
     .output {
       color: #ccc;
       margin-left: 2rem;
+      word-wrap: break-word; /* Safeguard on desktop too */
     }
 
     a {
@@ -94,13 +102,28 @@
       text-decoration: underline;
     }
 
+    /* MOBILE STYLES */
     @media (max-width: 768px) {
       .terminal-cv {
         flex-direction: column;
+        max-width: 95vw;
+        margin: 1rem auto;
+        border-width: 4px;
       }
       aside, main {
         width: 100%;
+        padding: 1.5rem 1rem;
         border-right: none;
+      }
+      .output {
+        margin-left: 0;
+        font-size: 0.9rem;
+      }
+      h3 {
+        font-size: 1.4rem;
+      }
+      p, .skills-list span {
+        font-size: 0.85rem;
       }
     }
   </style>
@@ -176,8 +199,8 @@
       </div>
     </main>
   </div>
-      <footer align="center">
-      &copy; 2025 Ruan Barnard, North-West University
-    </footer><br>
+  <footer align="center">
+    &copy; 2025 Ruan Barnard, North-West University
+  </footer><br>
 </body>
 </html>
