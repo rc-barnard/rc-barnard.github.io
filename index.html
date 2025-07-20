@@ -31,6 +31,28 @@
       box-shadow: 0 0 30px #00ff99;
       overflow: hidden;
     }
+	
+	ul.skills-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      color: #00ff99;
+    }
+
+    ul.skills-list li {
+      background: #003322;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      box-shadow: 0 0 5px #00ff99;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    ul.skills-list li:hover {
+      transform: scale(0.9);
+      background: #00ff99;
+      color: #000;
+    }
 
     aside {
       width: 35%;
@@ -64,7 +86,8 @@
       border: 4px solid #00ff99;
       overflow: hidden;
       box-shadow: 0 0 10px #00ff99;
-      margin-bottom: 1rem;
+	  display: block;
+	  margin: 0 auto;
     }
 
     .profile-pic img {
@@ -78,6 +101,8 @@
     }
 
     .skills-list {
+	  padding-left: 0;
+	  margin-left: 0;
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
@@ -92,14 +117,25 @@
     }
 
     .output {
+	  padding-bottom: 0;
+	  margin-bottom: 0;
+	  padding-top: 0;
+	  padding-left: 0;
+	  margin-left: 0;
       color: #ccc;
-      margin-left: 2rem;
       word-wrap: break-word; /* Safeguard on desktop too */
     }
 
     a {
       color: #00ff99;
       text-decoration: underline;
+    }
+	
+	.content-box {
+      background-color: #111;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #00ff99;
     }
 
     /* MOBILE STYLES */
@@ -125,6 +161,7 @@
       p, .skills-list span {
         font-size: 0.85rem;
       }
+	  
     }
   </style>
 </head>
@@ -136,70 +173,87 @@
         <div class="profile-pic">
           <img src="rcbarnard.jpg" alt="Ruan Barnard" />
         </div>
-        <h3>Ruan Charl Barnard</h3>
+        <h3 align="center">Ruan Charl Barnard</h3>
         <p><strong>Location:</strong> Potchefstroom, North-West</p>
         <p><strong>Phone:</strong> 061 919 6426</p>
         <p><strong>Email:</strong> <a href="mailto:ruanbarnard044@outlook.com">ruanbarnard044@outlook.com</a></p>
       </div>
 
       <div class="about section">
-        <div class="line"><span class="command">cat about.txt</span></div>
-        <div class="output">
+        <div class="line"><span class="command">cat about.txt</span></div><br>
+        <div class="content-box">
           My problem-solving skills are honed to deliver optimal solutions, and I am committed to achieving success for both myself and my work. As a fast learner with a strong desire to excel, I consistently strive to reach the highest standards in all endeavors.
         </div>
       </div>
 
       <div class="skills section">
         <div class="line"><span class="command">cat skills.json</span></div><br>
-        <div class="skills-list">
-          <span>OOP</span><span>ASP.NET</span><span>Oracle DB</span><span>Python</span>
-          <span>Java</span><span>C++</span><span>C#</span><span>SDLC</span>
-          <span>DBLC</span><span>Visual Studio</span><span>GitHub</span><span>Project Mgmt</span>
-          <span>Strategic Planning</span><span>Teamwork</span><span>Security</span>
-        </div>
+		<div class="content-box">
+			<ul class="skills-list">
+			  <li>OOP</li><li>ASP.NET</li><li>Oracle DB</li><li>Python</li>
+			  <li>C++</li><li>C#</li><li>GitHub</li><li>Problem Solving</li>
+			  <li>Database Life Cycle (DBLC)</li><li>Software Development Life Cycle (SDLC)</li><li>Visual Studio</li><li>Java</li><li>Project Management</li><li>TCP/IP</li>
+			  <li>Strategic Planning</li><li>Teamwork</li><li>Security</li><li>Critical Thinking</li>
+			<ul>
+		</div>
       </div>
     </aside>
 
     <main>
       <div class="section">
-        <div class="line"><span class="command">ls education</span></div>
-        <div class="output">
-          <p><strong>Hoërskool Jan Viljoen</strong> (2018 - 2022)<br />
-            National Senior Certificate<br>Status: <span style="color:#00ff99;">Completed</span></p>
-          <p><strong>North-West University</strong> (2023 - 2025)<br />
-            B.Sc. in Information Technology<br>Status: <span style="color:#00ff99;">In Progress</span></p>
-        </div>
+        <div class="line"><span class="command">ls education</span></div><br>
+		<div class="content-box">
+			<div class="output">
+			  <p><strong>Hoërskool Jan Viljoen</strong> (2018 - 2022)<br />
+				National Senior Certificate<br>Status: <span style="color:#00ff99;">Completed</span></p>
+			  <p><strong>North-West University</strong> (2023 - 2025)<br />
+				B.Sc. in Information Technology<br>Status: <span style="color:#00ff99;">In Progress</span></p>
+			</div>
+		</div>
       </div>
 
       <div class="section">
         <div class="line"><span class="command">ls experience</span></div>
-        <div class="output">
-          <p><strong>Student Assistant - CMPG111</strong> (Feb 2024 – Jun 2025)<br />
-            • Helped with admin tasks<br />
-            • Tutored students in Python<br />
-            • Assisted in class grading and test invigilation</p>
+		<center><strong><font color="white">North-West University (NWU)</font></strong></center><br>
+		<div class="content-box">
+			<div class="output">
+			  <p><strong>Student Assistant - CMPG111</strong> <br>(Feb 2024 – May 2024) & (Feb 2025 - Jun 2025)
+				<ul>
+					<li>Assisted the lecturer with administrative tasks.</li>
+					<li>Provided guidance and support to first-year students in Python programming concepts and practicals.</li>
+					<li>Monitored and ensured compliance during test invigilation sessions.</li>
+				</ul>
+			  </p>
 
-          <p><strong>Student Assistant - CMPG121</strong> (Jul 2024 – Oct 2024)<br />
-            • Similar to CMPG111 role, assisting structured programming course</p>
+			  <p><strong>Student Assistant - CMPG121</strong> <br>(Jul 2024 – Oct 2024)
+				<ul><li>Assisted with structured programming in C++, student support, and administrative tasks similar to CMPG111 responsibilities.</li></ul></p>
 
-          <p><strong>University eTutor - CMPG213</strong> (Jan 2025 – Jun 2025)<br />
-            • Assisted online students<br />
-            • Marked work, answered questions<br />
-            • Managed LMS discussion boards</p>
-        </div>
+			  <p><strong>UODL Marker - CMPG213</strong> <br>(Mar 2025 – Jun 2025)<br />
+				<ul><li>Assisted the UODL Department as a marking assistant in CMPG213 (System Analysis and Design) where I assessed student submissions and accurately captured and recorded marks with a focus on detail and academic integrity.</li>
+				<li>I demonstrated strong attention to detail, data integrity, and familiarity with academic administrative systems, contributing to the timely delivery of feedback and academic reporting.</li></ul></p>
+			</div>
+		</div>
       </div>
 
       <div class="section">
-        <div class="line"><span class="command">cat honours.txt</span></div>
-        <div class="output">
-          <p><strong>Golden Key International Honour Society – NWU</strong><br />
-          Awarded for ranking in the top 15% of my field based on academic performance.</p>
-        </div>
+        <div class="line"><span class="command">cat honours.txt</span></div><br>
+		<div class="content-box">
+			<div class="output">
+			  <p><strong>Golden Key International Honour Society – NWU</strong><br />
+			  Invited for ranking in the top 15% of my field based on academic performance.</p>
+			</div>
+		</div>
       </div>
     </main>
   </div>
   <footer align="center">
-    &copy; 2025 Ruan Barnard, North-West University
+    &copy; 2025 Ruan Barnard
+	<div align="center">
+	<br>
+        <a href="mailto:ruanbarnard044@outlook.com"><img src="outlook.png" width="5%"></a>
+        <a href="https://www.linkedin.com/in/ruan-barnard-69ab59307"><img src="linkedIn.png" width="5%"></a>
+        <a href="https://github.com/rc-barnard"><img src="github.png" width="5%"></a>
+	</div>
   </footer><br>
 </body>
 </html>
