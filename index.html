@@ -124,6 +124,20 @@
       color: #ccc;
       word-wrap: break-word;
     }
+	
+	.glow-img {
+	  display: block;
+	  margin: 1rem auto;
+	  padding: 10px;
+	  background-color: #111;
+	  border-radius: 12px;
+	  box-shadow: 0 0 15px #00ff99, 0 0 25px #00ff99;
+	  transition: transform 0.3s ease;
+	}
+
+	.glow-img:hover {
+	  transform: scale(1.03);
+	}
 
     a {
       color: #00ff99;
@@ -257,7 +271,7 @@
 				<li>Integrated live UI updates for seamless data refresh upon user interaction.</li>
 			  </ul>
 			  <p>Tech stack: C#, SQL Server, Visual Studio, ASP.NET</p>
-			  <center><img src="preview.png" alt="System Preview" width="60%" align="center"/></center>
+			  <center><img src="preview.png" alt="System Preview" width="60%" class="glow-img"/></center>
 			</div>
 		</div>
       </div>
